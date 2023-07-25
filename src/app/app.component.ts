@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-tuto';
+  auteur='hakim saoudi';
+  langage = 'Java';
 }
