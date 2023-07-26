@@ -1,7 +1,18 @@
 
 
 <div class="m-2">
+    <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+    <input type="text" class="form-control" [(ngModel)]="serverName" />
+
+    <p>{{ serverName }}</p>
     <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+    <button class="btn btn-primary" (click)="onCreateServer()">{{serverCreationStatus}}</button>
     <app-server></app-server>
     <app-server></app-server>
+    <button class="btn btn-primary" (click)="toggleActiveBtn()">{{activateBtn}}</button>
+    <section [hidden]="hideSection">
+        <h4>je ne suis plus caché !!</h4>
+    </section>
+    <button type="button" class="btn btn-info d-block"  (click)="onHideShowSection()">{{hideSection?'hide':'show'}}</button>
+
 </div>

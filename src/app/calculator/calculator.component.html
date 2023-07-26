@@ -1,0 +1,6 @@
+<h1 class="text-info">calculator !</h1>
+
+<input type="number" class="form-control" (input)="onUpdateVal1($event)" />
+<input type="number" class="form-control" (input)="onUpdateVal2($event)" />
+<input type="number" class="form-control" [(ngModel)]="res" readonly/>
+
