@@ -11,6 +11,7 @@ export class ServersComponent implements OnInit {
   activateBtn:string = "Activer";
   serverName:string = "";
   hideSection:boolean = true;
+  servers:string[] = ['server1','server2'];
 
   constructor() {
     setTimeout(() => {
@@ -28,6 +29,11 @@ export class ServersComponent implements OnInit {
   toggleActiveBtn() {
     this.allowNewServer=!this.allowNewServer;
     this.activateBtn = this.allowNewServer ?'Activer' : 'Desactiver';
+  }
+  addServer(event:Event){
+    const text = <HTMLInputElement>document.querySelector("#newServerInput");
+    this.servers.push((text.value));
+    text.value = "";
   }
 
   onHideShowSection(){

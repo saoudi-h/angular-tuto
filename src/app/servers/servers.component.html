@@ -5,10 +5,11 @@
     <input type="text" class="form-control" [(ngModel)]="serverName" />
 
     <p>{{ serverName }}</p>
-    <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+    <input type="text" class="form-control" id="newServerInput"/>
+    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="addServer($event)">Add Server</button>
     <button class="btn btn-primary" (click)="onCreateServer()">{{serverCreationStatus}}</button>
-    <app-server></app-server>
-    <app-server></app-server>
+    <app-server *ngFor="let server of servers"></app-server>
+    
     <button class="btn btn-primary" (click)="toggleActiveBtn()">{{activateBtn}}</button>
     <!-- <section [hidden]="hideSection"> -->
     <section *ngIf="hideSection">
